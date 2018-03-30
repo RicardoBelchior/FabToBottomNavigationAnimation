@@ -30,6 +30,7 @@ class ListActivity : AppCompatActivity() {
 
         navigationView = list_navigation
         navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
         val layoutParams = navigationView.layoutParams as CoordinatorLayout.LayoutParams
         layoutParams.behavior = BottomNavigationViewBehavior(object : BottomNavigationViewBehavior.Callback {
             override fun onSlideUp() {
@@ -51,21 +52,8 @@ class ListActivity : AppCompatActivity() {
         anim.showNavigationView()
     }
 
-    private fun animateBottomNavToFab() {
-
-        fabView.visibility = View.VISIBLE
-        fabView.alpha = 1f
-        navigationView.visibility = View.INVISIBLE
-        fabView.translationX = 0f
-        fabView.translationY = 0f
-    }
-
     ///////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////
-
-    private val onButtonClickListener: View.OnClickListener = View.OnClickListener {
-        animateBottomNavToFab()
-    }
 
     private val onFabClickListener: View.OnClickListener = View.OnClickListener {
         animateFabToBottomNav()
