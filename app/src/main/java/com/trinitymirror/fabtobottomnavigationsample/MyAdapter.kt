@@ -44,7 +44,7 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyHolder>() {
                 text = "Text #$position"
                 gravity = Gravity.CENTER_VERTICAL
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    setTextAppearance(android.R.style.TextAppearance_DeviceDefault_Medium)
+                    setTextAppearance(android.R.style.TextAppearance_DeviceDefault_Small)
                 }
             }
         }

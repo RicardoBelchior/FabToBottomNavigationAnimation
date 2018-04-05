@@ -32,7 +32,8 @@ public class FabToBottomNavigationAnim {
     private AnimatorSet showAnimatorSet;
     private AnimatorSet hideAnimatorSet;
 
-    public FabToBottomNavigationAnim(FloatingActionButton fabView, BottomNavigationView navigationView) {
+    public FabToBottomNavigationAnim(
+            FloatingActionButton fabView, BottomNavigationView navigationView) {
         this.fabView = fabView;
         this.navigationView = navigationView;
         this.fabMargin = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,

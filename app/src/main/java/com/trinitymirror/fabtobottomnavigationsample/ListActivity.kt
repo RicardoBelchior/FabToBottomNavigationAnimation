@@ -1,5 +1,6 @@
 package com.trinitymirror.fabtobottomnavigationsample
 
+import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
@@ -59,18 +60,19 @@ class ListActivity : AppCompatActivity() {
         animateFabToBottomNav()
     }
 
+    @SuppressLint("SetTextI18n")
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                list_message.setText(R.string.title_home)
+                list_message.text = "Selected: ${getString(R.string.title_home)}"
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-                list_message.setText(R.string.title_dashboard)
+                list_message.text = "Selected: ${getString(R.string.title_dashboard)}"
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                list_message.setText(R.string.title_notifications)
+                list_message.text = "Selected: ${getString(R.string.title_notifications)}"
                 return@OnNavigationItemSelectedListener true
             }
         }
