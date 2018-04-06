@@ -5,6 +5,7 @@ import android.animation.TimeInterpolator;
 import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v4.view.animation.FastOutLinearInInterpolator;
 import android.transition.Transition;
 import android.util.ArrayMap;
 import android.util.Property;
@@ -63,8 +64,7 @@ public class AnimUtils {
         if (gusterpolator == null) {
             synchronized (AnimUtils.class) {
                 if (gusterpolator == null) {
-                    gusterpolator = android.view.animation.AnimationUtils.loadInterpolator(ctx,
-                            android.R.interpolator.fast_out_slow_in);
+                    gusterpolator = new FastOutLinearInInterpolator();
                 }
             }
         }

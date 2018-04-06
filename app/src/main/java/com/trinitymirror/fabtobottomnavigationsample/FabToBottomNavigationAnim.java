@@ -8,6 +8,7 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewAnimationUtils;
@@ -47,7 +48,7 @@ public class FabToBottomNavigationAnim {
         }
 
         // don't show if it's already gonna show it
-        if (showAnimatorSet != null && showAnimatorSet.isRunning()) {
+        if (showAnimatorSet != null && showAnimatorSet.isStarted()) {
             return;
         }
 
@@ -67,12 +68,12 @@ public class FabToBottomNavigationAnim {
         }
 
         // don't hide if we're already hiding it
-        if (hideAnimatorSet != null && hideAnimatorSet.isRunning()) {
+        if (hideAnimatorSet != null && hideAnimatorSet.isStarted()) {
             return;
         }
 
-        // also, don't hide we're gonna show it
-        if (showAnimatorSet != null && showAnimatorSet.isRunning()) {
+        // also, don't hide if we're gonna show it
+        if (showAnimatorSet != null && showAnimatorSet.isStarted()) {
             return;
         }
 
